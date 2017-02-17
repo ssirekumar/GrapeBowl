@@ -1,5 +1,4 @@
-# Kiwee - Ui 1.0  
-# Kiwee - Ui 1.0 <img src="https://cloud.githubusercontent.com/assets/10174519/22942431/8c5486b2-f30f-11e6-8575-3864f329d52e.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="220px" height="250px">
+# Kiwee - Ui 1.0 <img src="https://cloud.githubusercontent.com/assets/10174519/22942431/8c5486b2-f30f-11e6-8575-3864f329d52e.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="150px" height="250px">
 <img src="https://cloud.githubusercontent.com/assets/10174519/23055566/8caa62a4-f50c-11e6-9601-91ce3ef0c898.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="350px" height="450px">
 <img src="https://cloud.githubusercontent.com/assets/10174519/23056026/3026f710-f50f-11e6-9d9e-e1f23a6e7979.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="350px" height="450px">
 </br>
