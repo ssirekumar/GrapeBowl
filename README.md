@@ -3,10 +3,10 @@
 <img src="https://cloud.githubusercontent.com/assets/10174519/23055566/8caa62a4-f50c-11e6-9601-91ce3ef0c898.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="250px" height="150px"></br>
 
 
-Kiwee is Ui tool for android mobile devices.
 
+Kiwee Ui is a tool for android mobile devices to help manual tester who do regular routine tasks on multiple devices.
 
-
+Note: Soon will update the code and execution file.
 
 
 BSD 3-Clause License
