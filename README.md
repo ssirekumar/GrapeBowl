@@ -1,4 +1,4 @@
-<img src="https://cloud.githubusercontent.com/assets/10174519/23062375/89ed089a-f52b-11e6-8f14-6bc47813e608.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="100px" height="100px"></br> Kiwee - Ui 1.0
+<img src="https://cloud.githubusercontent.com/assets/10174519/23062375/89ed089a-f52b-11e6-8f14-6bc47813e608.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="100px" height="130px"></br> Kiwee - Ui 1.0
 ====
 <img src="https://cloud.githubusercontent.com/assets/10174519/23055566/8caa62a4-f50c-11e6-9601-91ce3ef0c898.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="350px" height="450px">
 <img src="https://cloud.githubusercontent.com/assets/10174519/23056026/3026f710-f50f-11e6-9d9e-e1f23a6e7979.png" alt="Kiwee - Ui" style="width:150px;height:150px;" width="350px" height="450px">
