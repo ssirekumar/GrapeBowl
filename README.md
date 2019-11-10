@@ -16,9 +16,9 @@ The core objective of this application is to reduce manual intervention of execu
 This application also saves time by eradicating tedious manual efforts in operating on multiple devices sequentially.
 
 <h3><b>Dependencies:</b></h3></br>
-     <ol type="A" style="display: inline;">
-  <li>On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.</li>
- </ol>
+
+1. On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.
+
  
 ```
 Android ADB installed path*
@@ -35,9 +35,24 @@ JFrog Artifactory api key
 JFrog Artifactory Android build path
 JFrog Artifactory iOS build path
 ```
-<ol type="A" style="display: inline;">
-<li> Path of ADB on <b>macOS</b> machines if it installed from <a href=’https://developer.android.com/studio/install’>Android studio</a>
- </ol>
+2. Setup Homebrew on a Mac <a href='https://docs.brew.sh/Installation'>https://docs.brew.sh/Installation</a>
+
+```
+1. Install Homebrew on a Mac (https://docs.brew.sh/Installation)
+2. xcode-select --install (Xcode Command Line Tools https://railsapps.github.io/xcode-command-line-tools.html)
+3. Change "Command Line Tools" version > 10 
+
+```
+
+3. Path of ADB on <b>macOS</b> machines if it installed from <a href='https://developer.android.com/studio/install'>Android studio</a>
+
+```
+/Users/<your username>/Library/Android/sdk/platform-tools/adb
+```
+
+
+
+3. iOS-<a href=''>libimobiledevice</a> installed path
 
 
 <h2>Key Features: The core functionalities of this application include</h2>
