@@ -15,6 +15,8 @@ The core objective of this application is to reduce manual intervention of execu
 
 This application also saves time by eradicating tedious manual efforts in operating on multiple devices sequentially.
 
+Where do we get this application: https://github.com/ssirekumar/KiweeUi/releases
+
 <h3><b>Dependencies:</b></h3></br>
 
 1. On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.
