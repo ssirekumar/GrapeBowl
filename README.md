@@ -23,22 +23,23 @@ Where do we get this application: https://github.com/ssirekumar/KiweeUi/releases
  [Path of ADB on macOS machines](#path-of-adb-on-macos-machines)</br>
  [Path of libimobiledevice on macOS machines](#path-of-libimobiledevice-on-macos-machines)</br>
  [Path of ios-deploy on macOS machines](#path-of-ios-deploy-on-macos-machines)</br>
- [Install App](#install-app)</br>
- 
+ [Install App (Android & iOS)](#install-app)</br>
+ [Uninstall app (Android & iOS)](#uninstall-app)</br>
+ [Clear App Data and Cache (Android)](#clear-app-data-and-cache)</br>
+ [Device Info (Android)](#device-info)</br>
+ [Bug Report (Android)](#bug-report)</br>
+ [Execute ADB Commands (Android)](#execute-adb-commands)</br>
 
 ## Dependencies:
 
 1. On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.
-
- 
-```
+ ```
 Android ADB installed path*
 iOS-libimobiledevice installed path*
 Android Application Package names*`
 iOS-ios-deploy installed path*
 ```
 #### JFrog Credentials
-
 ```
 JFrog Artifactory base URL
 JFrog Artifactory user name
@@ -47,7 +48,6 @@ JFrog Artifactory Android build path
 JFrog Artifactory iOS build path
 ```
 2. Setup Homebrew on a Mac <a href='https://docs.brew.sh/Installation'>https://docs.brew.sh/Installation</a>
-
 ```
 1. Install Homebrew on a Mac (https://docs.brew.sh/Installation, https://brew.sh/)
 2. xcode-select --install (Xcode Command Line Tools https://railsapps.github.io/xcode-command-line-tools.html)
@@ -116,7 +116,7 @@ Version will vary at the time of new installation
 </ol>  
 </ol>
 
-<h3><b>Uninstall app:</b></h3></br>
+## Uninstall app:
      <ol type="A" style="display: inline;">
   <li>The second tab that the user sees is the Uninstall app. As the name suggests, the user is given the option to uninstall the application across multiple devices
 </li>
@@ -127,30 +127,32 @@ Version will vary at the time of new installation
   <li>Once the contains applications devices are found, has to press “Uninstall App’s” button to be able to uninstall the selected apps.</li>    
 </ol>  
    
-<h3><b>Clear App Data & Cache: </b></h3></br>
+## Clear App Data and Cache:
      <ol type="A" style="display: inline;">
   <li>This feature provides the user an option to clear the app data & cache from the list of connected devices.</li>
   <li>After choosen app package name (Android) or bundle identifier (iOS) to clear app data & cache, Kiwee will search all connceted devices is there any application containing this package name (Android) or bundle identifier (iOS), if it is it will return that device and add it to device list controller.</li>   
 </ol>  
 
-<h3><b> Device Info: </b></h3></br>
+## Device Info:
      <ol type="A" style="display: inline;">
   <li>This tab provides the user to see all the details or the specific details of the connected device.</li>
   <li>Selecting the radio button All, will list out all the basic details of the device selected which can be in turn saved onto CSV.</li>  
   <li>If the user wishes to see only specific details of the connected device, he can select the radio button “Attribute” which shows up the details to be chosen to be shown.</li>
 </ol>  
 
-<h3><b>Bug Report:</b></h3></br>
+## Bug Report:
      <ol type="A" style="display: inline;">
   <li>This option provides the user to generate bug reports across multiple devices, and also gives the location to which the bug report can be saved.</li>
  </ol>  
 
-<h3><b>Execute ADB Commands:</b></h3></br>
+## Execute ADB Commands:
      <ol type="A" style="display: inline;">
   <li>Under this tab, the user is provided with two options, predefined and Custom.</li>
   <li>Selecting predefined, shows the user, the list of adb commands that are already incorporated in the application which the user and pick and execute.</li>  
   <li>Alternatively, if the user selects Custom, the user can manually enter the command which is not part of existing commands, may store and save to this application, and execute it.</li>
 </ol>  
+</br>
+</br>
 
 
 
