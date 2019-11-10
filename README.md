@@ -17,8 +17,39 @@
 
 The core objective of this application is to reduce manual intervention of executing key functionalities. This application handles all the functionalities that include, allowing the user to install/uninstall applications across multiple devices in Android & iOS platforms, which currently, are being operated manually.
 
+This application also saves time by eradicating tedious manual efforts in operating on multiple devices sequentially.
+
+<b>Key Features: (The core functionalities of this application include) </b>
+    
+    <b>Install App:</b>
+
+
 
 Note: Soon will update the code and execution file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 BSD 3-Clause License
