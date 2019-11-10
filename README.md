@@ -67,14 +67,21 @@ JFrog Artifactory iOS build path
 ```
 
 3. Path of ADB on <b>macOS</b> machines if it installed from <a href='https://developer.android.com/studio/install'>Android studio</a>
-
 ```
 /Users/<your username>/Library/Android/sdk/platform-tools/adb
 ```
+4. iOS <a href='https://github.com/libimobiledevice/libimobiledevice'>libimobiledevice</a> installed path <b>macOS</b>
 
+```
+/usr/local/Cellar/libimobiledevice/1.2.0_4/bin/
 
+Version will vary at the time of new instaltion
+```
+5. iOS <a href='https://github.com/ios-control/ios-deploy'>ios-deploy</a> installed path on <b>macOS</b>
+```
+/usr/local/lib/node_modules/ios-deploy/build/Release/
+```
 
-3. iOS-<a href=''>libimobiledevice</a> installed path
 
 
 <h2>Key Features: The core functionalities of this application include</h2>
