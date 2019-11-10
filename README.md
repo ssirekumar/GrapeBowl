@@ -19,26 +19,34 @@ The core objective of this application is to reduce manual intervention of execu
 
 This application also saves time by eradicating tedious manual efforts in operating on multiple devices sequentially.
 
-<b>Key Features: (The core functionalities of this application include) </b>
-    
-   <b>Install App:</b></br>
-         <ol type="A" style="display: inline;">
+<h3><b>Install App:</b></h3></br>
+<ol type="A" style="display: inline;">
   <li>As soon as we launch the application, the first tab among the available tabs that shows up is the Install App Tab, contains a drop down menu named “Device OS type” that will let us choose between Android or iOS onto which the application has to be installed.</li>
   <li>Once the platform is chosen, we come across 2 radio buttons that gives us choice whether to pick the APK either from <b>System path / JFrog Repository.</b></li>
-     <ol type="a">
+  <ol type="a">
      <li>When we select System Path, a window opens asking us to choose the location where the apk has been stored to be able to select for installation.</li>
      <li>Similarly, when we choose JFrog, we will be redirected to the repository that contains the apk to be chosen.</li>
      <li>After locating the apk to be installed, we have various installation options, to be appended to the adb command, whether to update the existing apk, over ride the apk and other options.
 </li>
-  <li>The user is provided with a button named “Get Devices”, tapping on which lists out all the connected devices. The user can choose which device / devices in which the application has to be installed.</li>
-  <li>Once the device(s) selection is done, the user can press the button “Install App” that will install the application across the chosen devices.
-</li>
-<li>The Action Log container shows the user, the ongoing execution like, the installation percentage, bug report capture status etc.</li>
-<li>Also, the user is provided with 2 options to perform on the Action Log, whether to Copy the log or to clear the log.
-</li>
-     <ol>
-     
+     <li>The user is provided with a button named “Get Devices”, tapping on which lists out all the connected devices. The user can choose which device / devices in which the application has to be installed.</li>
+     <li>Once the device(s) selection is done, the user can press the button “Install App” that will install the application across the chosen devices.</li>
+     <li>The Action Log container shows the user, the ongoing execution like, the installation percentage, bug report capture status etc.</li>
+     <li>Also, the user is provided with 2 options to perform on the Action Log, whether to Copy the log or to clear the log.</li>
 </ol>  
+</ol></br>
+
+<h3><b>Uninstall app:</b></h3></br>
+     <ol type="A" style="display: inline;">
+  <li>The second tab that the user sees is the Uninstall app. As the name suggests, the user is given the option to uninstall the application across multiple devices
+</li>
+  <li>The user can select the OS type, whether it is Android or iOS.</li>
+  <li>The user may chose uninstall option provided.</li>
+  <li>The user can manually enter the application package name (Android) or bundle identifier (iOS) to be uninstalled or can choose the list of application names to be uninstalled.</li>
+  <li>After chosen app package name (Android) or bundle identifier (iOS) to uninstall, Kiwee will search all connceted devices is there any application containing this package name (Android) or bundle identifier (iOS), if it is it will return that device and add it to device list controller.</li>
+  <li>Once the contains applications devices are found, has to press “Uninstall App’s” button to be able to uninstall the selected apps.</li>    
+</ol>  
+   
+
 
 
 
