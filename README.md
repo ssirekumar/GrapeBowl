@@ -19,7 +19,10 @@ Where do we get this application: https://github.com/ssirekumar/KiweeUi/releases
 
 ## Menu List
  [Dependencies](#dependencies) </br>
- [JFrog Credentials](jfrog-credentials)
+ [JFrog Credentials](jfrog-credentials)</br>
+ [Path of ADB on macOS machines](path-of-ADB-on-macOS-machines)
+ [Path of libimobiledevice on macOS machines](path-of-libimobiledevice-on-macos-machines)
+ [Path of ios-deploy on macOS machines](path-of-ios-deploy-on-macos-machines)
 
 ## Dependencies:
 
@@ -32,7 +35,7 @@ iOS-libimobiledevice installed path*
 Android Application Package names*`
 iOS-ios-deploy installed path*
 ```
-JFrog Credentials
+#### JFrog Credentials
 
 ```
 JFrog Artifactory base URL
@@ -71,11 +74,14 @@ JFrog Artifactory iOS build path
           b.1 $ brew install ios-deploy
 
 ```
+#### Path of ADB on macOS machines
 
 3. Path of ADB on <b>macOS</b> machines if it installed from <a href='https://developer.android.com/studio/install'>Android studio</a>
 ```
 /Users/<your username>/Library/Android/sdk/platform-tools/adb
 ```
+#### Path of libimobiledevice on macOS machines
+
 4. iOS <a href='https://github.com/libimobiledevice/libimobiledevice'>libimobiledevice</a> installed path <b>macOS</b>
 
 ```
@@ -83,14 +89,16 @@ JFrog Artifactory iOS build path
 
 Version will vary at the time of new installation
 ```
+#### Path of ios-deploy on macOS machines
+
 5. iOS <a href='https://github.com/ios-control/ios-deploy'>ios-deploy</a> installed path on <b>macOS</b>
 ```
 /usr/local/lib/node_modules/ios-deploy/build/Release/
 ```
 
-<h2>Key Features: The core functionalities of this application include</h2>
+# Key Features: The core functionalities of this application include
    
-<h3><b>Install App:</b></h3></br>
+## Install App:
 <ol type="A" style="display: inline;">
   <li>As soon as we launch the application, the first tab among the available tabs that shows up is the Install App Tab, contains a drop down menu named “Device OS type” that will let us choose between Android or iOS onto which the application has to be installed.</li>
   <li>Once the platform is chosen, we come across 2 radio buttons that gives us choice whether to pick the APK either from <b>System path / <a href='https://jfrog.com/artifactory/'>JFrog Repository.</a></b></li>
