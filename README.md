@@ -60,6 +60,13 @@ This application also saves time by eradicating tedious manual efforts in operat
   <li>This option provides the user to generate bug reports across multiple devices, and also gives the location to which the bug report can be saved.</li>
  </ol>  
 
+<h3><b>Execute ADB Commands:</b></h3></br>
+     <ol type="A" style="display: inline;">
+  <li>Under this tab, the user is provided with two options, predefined and Custom.</li>
+  <li>Selecting predefined, shows the user, the list of adb commands that are already incorporated in the application which the user and pick and execute.</li>  
+  <li>Alternatively, if the user selects Custom, the user can manually enter the command which is not part of existing commands, may store and save to this application, and execute it.</li>
+</ol>  
+
 
 
 
