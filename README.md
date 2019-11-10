@@ -29,7 +29,7 @@ This application also saves time by eradicating tedious manual efforts in operat
      <li>The Action Log container shows the user, the ongoing execution like, the installation percentage, bug report capture status etc.</li>
      <li>Also, the user is provided with 2 options to perform on the Action Log, whether to Copy the log or to clear the log.</li>
 </ol>  
-</ol></br>
+</ol>
 
 <h3><b>Uninstall app:</b></h3></br>
      <ol type="A" style="display: inline;">
