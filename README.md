@@ -20,10 +20,10 @@ Where do we get this application: https://github.com/ssirekumar/KiweeUi/releases
 ## Menu List
  [Dependencies](#dependencies) </br>
  [JFrog Credentials](#jfrog-credentials)</br>
- [Path of ADB on macOS machines](#path-of-ADB-on-macOS-machines)</br>
+ [Path of ADB on macOS machines](#path-of-adb-on-macos-machines)</br>
  [Path of libimobiledevice on macOS machines](#path-of-libimobiledevice-on-macos-machines)</br>
  [Path of ios-deploy on macOS machines](#path-of-ios-deploy-on-macos-machines)</br>
- [Key Features: The core functionalities of this application include](#key-features:-the-core-functionalities-of-this-application-include)</br>
+ [Install App](#install-app)</br>
  
 
 ## Dependencies:
