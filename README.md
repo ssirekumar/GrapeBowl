@@ -117,7 +117,7 @@ Version will vary at the time of new installation
 </ol>
 
 ## Uninstall app:
-     <ol type="A" style="display: inline;">
+<ol type="A" style="display: inline;">
   <li>The second tab that the user sees is the Uninstall app. As the name suggests, the user is given the option to uninstall the application across multiple devices
 </li>
   <li>The user can select the OS type, whether it is Android or iOS.</li>
@@ -128,32 +128,31 @@ Version will vary at the time of new installation
 </ol>  
    
 ## Clear App Data and Cache:
-     <ol type="A" style="display: inline;">
+<ol type="A" style="display: inline;">
   <li>This feature provides the user an option to clear the app data & cache from the list of connected devices.</li>
   <li>After choosen app package name (Android) or bundle identifier (iOS) to clear app data & cache, Kiwee will search all connceted devices is there any application containing this package name (Android) or bundle identifier (iOS), if it is it will return that device and add it to device list controller.</li>   
 </ol>  
 
 ## Device Info:
-     <ol type="A" style="display: inline;">
+<ol type="A" style="display: inline;">
   <li>This tab provides the user to see all the details or the specific details of the connected device.</li>
   <li>Selecting the radio button All, will list out all the basic details of the device selected which can be in turn saved onto CSV.</li>  
   <li>If the user wishes to see only specific details of the connected device, he can select the radio button “Attribute” which shows up the details to be chosen to be shown.</li>
 </ol>  
 
 ## Bug Report:
-     <ol type="A" style="display: inline;">
+<ol type="A" style="display: inline;">
   <li>This option provides the user to generate bug reports across multiple devices, and also gives the location to which the bug report can be saved.</li>
- </ol>  
+</ol>  
 
 ## Execute ADB Commands:
-     <ol type="A" style="display: inline;">
+<ol type="A" style="display: inline;">
   <li>Under this tab, the user is provided with two options, predefined and Custom.</li>
   <li>Selecting predefined, shows the user, the list of adb commands that are already incorporated in the application which the user and pick and execute.</li>  
   <li>Alternatively, if the user selects Custom, the user can manually enter the command which is not part of existing commands, may store and save to this application, and execute it.</li>
 </ol>  
 </br>
 </br>
-
 
 
 
