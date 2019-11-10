@@ -139,45 +139,6 @@ Version will vary at the time of new installation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Note: Soon will update the code and execution file.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 BSD 3-Clause License
 
 Software License Agreement (<a href="https://opensource.org/licenses/BSD-2-Clause">BSD License</a>)</br>
