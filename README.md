@@ -42,7 +42,11 @@ This application also saves time by eradicating tedious manual efforts in operat
   <li>Once the contains applications devices are found, has to press “Uninstall App’s” button to be able to uninstall the selected apps.</li>    
 </ol>  
    
-
+<h3><b>Clear App Data & Cache: </b></h3></br>
+     <ol type="A" style="display: inline;">
+  <li>This feature provides the user an option to clear the app data & cache from the list of connected devices.</li>
+  <li>After choosen app package name (Android) or bundle identifier (iOS) to clear app data & cache, Kiwee will search all connceted devices is there any application containing this package name (Android) or bundle identifier (iOS), if it is it will return that device and add it to device list controller.</li>   
+</ol>  
 
 
 
