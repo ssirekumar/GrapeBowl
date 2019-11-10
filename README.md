@@ -18,8 +18,8 @@ This application also saves time by eradicating tedious manual efforts in operat
 <h3><b>Dependencies:</b></h3></br>
      <ol type="A" style="display: inline;">
   <li>On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.</li>
+ </ol>
  
-
 ```
 Android ADB installed path*
 iOS-libimobiledevice installed path*
@@ -35,9 +35,12 @@ JFrog Artifactory api key
 JFrog Artifactory Android build path
 JFrog Artifactory iOS build path
 ```
+<ol type="A" style="display: inline;">
 <li> Path of ADB on <b>macOS</b> machines if it installed from <a href=’https://developer.android.com/studio/install’>Android studio</a>
-</ol>
-## H2 Key Features: The core functionalities of this application include
+ </ol>
+
+
+<h2>Key Features: The core functionalities of this application include</h2>
    
 <h3><b>Install App:</b></h3></br>
 <ol type="A" style="display: inline;">
