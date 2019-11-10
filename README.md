@@ -40,7 +40,17 @@ JFrog Artifactory iOS build path
 ```
 1. Install Homebrew on a Mac (https://docs.brew.sh/Installation)
 2. xcode-select --install (Xcode Command Line Tools https://railsapps.github.io/xcode-command-line-tools.html)
-3. Change "Command Line Tools" version > 10 
+    a. Check if the full Xcode package is already installed:
+      $ xcode-select -p
+    b. If you see:
+        /Applications/Xcode.app/Contents/Developer
+        the full Xcode package is already installed.
+3. Change "Command Line Tools" iOS version > 10.x.x 
+     3.1 You can do this in two ways:
+          a. sudo xcode-select -s /Applications/Xcode-beta.app 
+          b. Or via Xcode
+              b. 1 Click the "Xcode" button in the top left of the screen near the Apple logo, then click "Preferences"
+              b. 2 Click on Locations -> select Command Line Tools
 
 ```
 
