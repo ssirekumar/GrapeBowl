@@ -19,10 +19,10 @@ This application also saves time by eradicating tedious manual efforts in operat
      <ol type="A" style="display: inline;">
   <li>On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.</li>
 </ol> 
-     'Android ADB installed path*'
-     'iOS-libimobiledevice installed path*'
-     'Android Application Package names*'
-     'iOS-ios-deploy installed path*'
+     `Android ADB installed path*`
+     `iOS-libimobiledevice installed path*`
+     `Android Application Package names*`
+     `iOS-ios-deploy installed path*`
 
     
 
