@@ -9,11 +9,7 @@
   </tr>
 </table>
 
-
-
 </br>
-
-
 
 The core objective of this application is to reduce manual intervention of executing key functionalities. This application handles all the functionalities that include, allowing the user to install/uninstall applications across multiple devices in Android & iOS platforms, which currently, are being operated manually.
 
