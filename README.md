@@ -17,7 +17,11 @@ This application also saves time by eradicating tedious manual efforts in operat
 
 Where do we get this application: https://github.com/ssirekumar/KiweeUi/releases
 
-<h3><b>Dependencies:</b></h3></br>
+## Menu List
+ [Dependencies](#dependencies) </br>
+ [JFrog Credentials](jfrog-credentials)
+
+## Dependencies:
 
 1. On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.
 
