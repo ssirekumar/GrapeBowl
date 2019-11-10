@@ -38,19 +38,31 @@ JFrog Artifactory iOS build path
 2. Setup Homebrew on a Mac <a href='https://docs.brew.sh/Installation'>https://docs.brew.sh/Installation</a>
 
 ```
-1. Install Homebrew on a Mac (https://docs.brew.sh/Installation)
+1. Install Homebrew on a Mac (https://docs.brew.sh/Installation, https://brew.sh/)
 2. xcode-select --install (Xcode Command Line Tools https://railsapps.github.io/xcode-command-line-tools.html)
     a. Check if the full Xcode package is already installed:
-      $ xcode-select -p
+        a.1 $ xcode-select -p
     b. If you see:
         /Applications/Xcode.app/Contents/Developer
         the full Xcode package is already installed.
 3. Change "Command Line Tools" iOS version > 10.x.x 
      3.1 You can do this in two ways:
-          a. sudo xcode-select -s /Applications/Xcode-beta.app 
+          a. $ sudo xcode-select -s /Applications/Xcode-beta.app 
           b. Or via Xcode
               b. 1 Click the "Xcode" button in the top left of the screen near the Apple logo, then click "Preferences"
               b. 2 Click on Locations -> select Command Line Tools
+4. Install libimobiledevice (https://github.com/libimobiledevice/libimobiledevice)
+    4.1 $ brew install --HEAD libimobiledevice
+    4.2 $ brew link --overwrite libimobiledevice
+    4.3 $ brew install --HEAD  ideviceinstaller
+    4.4 $ brew link --overwrite ideviceinstaller
+    4.4 $ sudo chmod -R 777 /var/db/lockdown/ (This step is optional)
+5. Install ios-deploy (https://github.com/ios-control/ios-deploy) either from homebrew OR npm
+     a. ios-deploy installation is made simple using the node.js package manager. If you use Homebrew, install node.js:
+          a.1 $ brew install node
+          a.2 $ npm install -g ios-deploy
+     b. ios-deploy with Homebrew
+          b.1 $ brew install ios-deploy
 
 ```
 
