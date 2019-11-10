@@ -18,7 +18,7 @@ This application also saves time by eradicating tedious manual efforts in operat
 <h3><b>Install App:</b></h3></br>
 <ol type="A" style="display: inline;">
   <li>As soon as we launch the application, the first tab among the available tabs that shows up is the Install App Tab, contains a drop down menu named “Device OS type” that will let us choose between Android or iOS onto which the application has to be installed.</li>
-  <li>Once the platform is chosen, we come across 2 radio buttons that gives us choice whether to pick the APK either from <b>System path / JFrog Repository.</b></li>
+  <li>Once the platform is chosen, we come across 2 radio buttons that gives us choice whether to pick the APK either from <b>System path / <a href='https://jfrog.com/artifactory/'>JFrog Repository.</a></b></li>
   <ol type="a">
      <li>When we select System Path, a window opens asking us to choose the location where the apk has been stored to be able to select for installation.</li>
      <li>Similarly, when we choose JFrog, we will be redirected to the repository that contains the apk to be chosen.</li>
