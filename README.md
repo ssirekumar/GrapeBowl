@@ -15,6 +15,19 @@ The core objective of this application is to reduce manual intervention of execu
 
 This application also saves time by eradicating tedious manual efforts in operating on multiple devices sequentially.
 
+<h3><b>Dependencies:</b></h3></br>
+     <ol type="A" style="display: inline;">
+  <li>On first launch Kiwee need parameter values, this we have to provide from Kiwee preferences (File —> Preferences). All values are mandatory.</li>
+</ol> 
+     'Android ADB installed path*'
+     'iOS-libimobiledevice installed path*'
+     'Android Application Package names*'
+     'iOS-ios-deploy installed path*'
+
+    
+
+    
+
 <h3><b>Install App:</b></h3></br>
 <ol type="A" style="display: inline;">
   <li>As soon as we launch the application, the first tab among the available tabs that shows up is the Install App Tab, contains a drop down menu named “Device OS type” that will let us choose between Android or iOS onto which the application has to be installed.</li>
