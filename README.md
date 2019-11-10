@@ -75,14 +75,12 @@ JFrog Artifactory iOS build path
 ```
 /usr/local/Cellar/libimobiledevice/1.2.0_4/bin/
 
-Version will vary at the time of new instaltion
+Version will vary at the time of new installation
 ```
 5. iOS <a href='https://github.com/ios-control/ios-deploy'>ios-deploy</a> installed path on <b>macOS</b>
 ```
 /usr/local/lib/node_modules/ios-deploy/build/Release/
 ```
-
-
 
 <h2>Key Features: The core functionalities of this application include</h2>
    
@@ -108,7 +106,7 @@ Version will vary at the time of new instaltion
 </li>
   <li>The user can select the OS type, whether it is Android or iOS.</li>
   <li>The user may chose uninstall option provided.</li>
-  <li>The user can manually enter the application package name (Android) or bundle identifier (iOS) to be uninstalled or can choose the list of application names to be uninstalled.</li>
+  <li>The user can manually enter the application package name (Android) or bundle identifier (iOS) to be uninstalled or can choose the list of application names to be uninstalled.(Multiple package/bundle names can be added with | delimiter in Kiwee Preferences)</li>
   <li>After chosen app package name (Android) or bundle identifier (iOS) to uninstall, Kiwee will search all connceted devices is there any application containing this package name (Android) or bundle identifier (iOS), if it is it will return that device and add it to device list controller.</li>
   <li>Once the contains applications devices are found, has to press “Uninstall App’s” button to be able to uninstall the selected apps.</li>    
 </ol>  
