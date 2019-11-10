@@ -48,7 +48,17 @@ This application also saves time by eradicating tedious manual efforts in operat
   <li>After choosen app package name (Android) or bundle identifier (iOS) to clear app data & cache, Kiwee will search all connceted devices is there any application containing this package name (Android) or bundle identifier (iOS), if it is it will return that device and add it to device list controller.</li>   
 </ol>  
 
+<h3><b> Device Info: </b></h3></br>
+     <ol type="A" style="display: inline;">
+  <li>This tab provides the user to see all the details or the specific details of the connected device.</li>
+  <li>Selecting the radio button All, will list out all the basic details of the device selected which can be in turn saved onto CSV.</li>  
+  <li>If the user wishes to see only specific details of the connected device, he can select the radio button “Attribute” which shows up the details to be chosen to be shown.</li>
+</ol>  
 
+<h3><b>Bug Report:</b></h3></br>
+     <ol type="A" style="display: inline;">
+  <li>This option provides the user to generate bug reports across multiple devices, and also gives the location to which the bug report can be saved.</li>
+ </ol>  
 
 
 
