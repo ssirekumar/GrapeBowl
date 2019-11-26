@@ -18,7 +18,7 @@ The core objective of this application is to reduce manual intervention of execu
 
 This application also saves time by eradicating tedious manual efforts in operating on multiple devices sequentially.
 
-Where do we get this application: https://github.com/ssirekumar/KiweeUi/releases
+Where do we get this application: https://github.com/ssirekumar/GrapeBowl/releases
 
 ## Menu List
  [Dependencies](#dependencies) </br>
