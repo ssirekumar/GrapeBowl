@@ -1,5 +1,6 @@
-<a style="cursor:not-allowed;opacity:0.5;text-decoration:none"><img src="https://user-images.githubusercontent.com/10174519/74126700-9ada5e00-4bfe-11ea-8e99-68f6eaeb64ea.png" alt="Grape Bowl Tool" width="155px" height="120px"></a></br> Grape Bowl
+<img src="https://user-images.githubusercontent.com/10174519/74126700-9ada5e00-4bfe-11ea-8e99-68f6eaeb64ea.png" style="cursor:not-allowed;text-decoration:none" alt="Grape Bowl Tool" width="155px" height="120px"></br> Grape Bowl
 ====
+
 <table style="width:100%">
  <tr>
     <td><img src="https://user-images.githubusercontent.com/10174519/70904857-714eed00-2028-11ea-908b-e457c0dbcca7.png" alt="Grape Bowl" style="width:150px;height:150px;" width="380px" height="350px"></td>
