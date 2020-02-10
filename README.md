@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/10174519/73518403-33652700-4424-11ea-8139-d4f0c1686e10.png" alt="Grape Bowl Tool" style="width:250px;height:150px;" width="125px" height="100px"></br> Grape Bowl
+<img src="https://user-images.githubusercontent.com/10174519/74126700-9ada5e00-4bfe-11ea-8e99-68f6eaeb64ea.png" alt="Grape Bowl Tool" width="155px" height="120px"></br> Grape Bowl
 ====
 
 <table style="width:100%">
