@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kiwee.controllers.ImageComparisionController">
+   <children>
+      <VBox prefHeight="350.0" prefWidth="483.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="37.0" prefWidth="401.0" spacing="3.0">
+               <children>
+                  <Label text="Device type" />
+                  <ChoiceBox fx:id="com_DeviceOsType_ImageComparision" onInputMethodTextChanged="#getAllDevicesAsPerDeviceOSSelection" prefWidth="150.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="328.0" prefWidth="443.0">
+               <children>
+                  <GridPane hgap="3.0" prefHeight="281.0" prefWidth="482.0" vgap="3.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="241.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="241.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="240.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                        <ImageView fitHeight="242.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                        <ComboBox fx:id="comb_imageComparisionFirstDevice" prefWidth="150.0" promptText="Select device" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="comb_imageComparisionSecondDevice" prefWidth="150.0" promptText="Select device" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Button fx:id="btn_imageComparisionIntensity" mnemonicParsing="false" prefHeight="27.0" prefWidth="115.0" text="Intensity" />
+                              <TextField fx:id="txt_imageComparisionIntencityValue" prefHeight="27.0" prefWidth="98.0" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="-10.0" />
+                     </HBox.margin>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="41.0" prefWidth="110.0" spacing="5.0">
+               <children>
+                  <Button fx:id="btn_imageComparision" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="Compare" />
+                  <Button fx:id="btn_imageComparisionEnlarge" mnemonicParsing="false" text="Enlarge" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="3.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="328.0" />
+               </VBox.margin></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
