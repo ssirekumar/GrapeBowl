@@ -1,0 +1,45 @@
+<html><head>
+  <SCRIPT src="./web-files/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'KiweeTool.jnlp',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZhZnguY29tIiBocmVmPSJLaXdlZVRvb2wuam5scCI+CiAgPGluZm9ybWF0aW9uPgogICAgPHRpdGxlPktpd2VlIDEuMDwvdGl0bGU+CiAgICA8dmVuZG9yPlNpcmkgS3VtYXIgUHV0dGFndW50YTwvdmVuZG9yPgogICAgPGRlc2NyaXB0aW9uPktpd2VlIGZvciBNb2JpbGUgUUEgYW5kIERldjwvZGVzY3JpcHRpb24+CiAgICA8b2ZmbGluZS1hbGxvd2VkLz4KICA8L2luZm9ybWF0aW9uPgogIDxyZXNvdXJjZXM+CiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+CiAgICA8amFyIGhyZWY9Iktpd2VlVG9vbC5qYXIiIHNpemU9IjIzMDYyODQiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGlicy9jb21tb25zLWV4ZWMtMS4zLmphciIgc2l6ZT0iNTQ0MjMiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGlicy9jb21tb25zLWlvLTIuNi5qYXIiIHNpemU9IjIxNDc4OCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWJzL2pmeHJ0LmphciIgc2l6ZT0iMTgxOTU1NTMiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGlicy9qc29uLXNpbXBsZS0xLjEuMS5qYXIiIHNpemU9IjIzOTMxIiBkb3dubG9hZD0iZWFnZXIiIC8+CiAgICA8amFyIGhyZWY9ImxpYnMvb3BlbmNzdi0yLjMuamFyIiBzaXplPSIxNDE0NiIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogIDwvcmVzb3VyY2VzPgogIDxqZng6amF2YWZ4LWRlc2MgIHdpZHRoPSIwIiBoZWlnaHQ9IjAiIG1haW4tY2xhc3M9ImNvbS5raXdlZS5hcHBsaWNhdGlvbi5LaXdlZSIgIG5hbWU9Iktpd2VlIiAvPgogIDx1cGRhdGUgY2hlY2s9ImJhY2tncm91bmQiLz4KPC9qbmxwPgo='
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedfxApplication() {
+        dtjava.embed(
+            {
+                id : 'fxApplication',
+                url : 'KiweeTool.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '0',
+                height : '0',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZhZnguY29tIiBocmVmPSJLaXdlZVRvb2wuam5scCI+CiAgPGluZm9ybWF0aW9uPgogICAgPHRpdGxlPktpd2VlIDEuMDwvdGl0bGU+CiAgICA8dmVuZG9yPlNpcmkgS3VtYXIgUHV0dGFndW50YTwvdmVuZG9yPgogICAgPGRlc2NyaXB0aW9uPktpd2VlIGZvciBNb2JpbGUgUUEgYW5kIERldjwvZGVzY3JpcHRpb24+CiAgICA8b2ZmbGluZS1hbGxvd2VkLz4KICA8L2luZm9ybWF0aW9uPgogIDxyZXNvdXJjZXM+CiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+CiAgICA8amFyIGhyZWY9Iktpd2VlVG9vbC5qYXIiIHNpemU9IjIzMDYyODQiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGlicy9jb21tb25zLWV4ZWMtMS4zLmphciIgc2l6ZT0iNTQ0MjMiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGlicy9jb21tb25zLWlvLTIuNi5qYXIiIHNpemU9IjIxNDc4OCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWJzL2pmeHJ0LmphciIgc2l6ZT0iMTgxOTU1NTMiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGlicy9qc29uLXNpbXBsZS0xLjEuMS5qYXIiIHNpemU9IjIzOTMxIiBkb3dubG9hZD0iZWFnZXIiIC8+CiAgICA8amFyIGhyZWY9ImxpYnMvb3BlbmNzdi0yLjMuamFyIiBzaXplPSIxNDE0NiIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogIDwvcmVzb3VyY2VzPgogIDxqZng6amF2YWZ4LWRlc2MgIHdpZHRoPSIwIiBoZWlnaHQ9IjAiIG1haW4tY2xhc3M9ImNvbS5raXdlZS5hcHBsaWNhdGlvbi5LaXdlZSIgIG5hbWU9Iktpd2VlIiAvPgogIDx1cGRhdGUgY2hlY2s9ImJhY2tncm91bmQiLz4KPC9qbmxwPgo='
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedfxApplication);
+</script>
+
+</head><body>
+<h2>Test page for <b>Kiwee</b></h2>
+  <b>Webstart:</b> <a href='KiweeTool.jnlp' onclick="return launchApplication('KiweeTool.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>

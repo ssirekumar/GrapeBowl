@@ -1,0 +1,69 @@
+{
+  "_from": "ios-deploy",
+  "_id": "ios-deploy@1.9.4",
+  "_inBundle": false,
+  "_integrity": "sha512-pgyc19zgtwGrfx3GL8yV0c0dAPucTpJ0VZkuS3DcqxIZYC48+UW+tBTxI43u1ZDk17mop0ABLs1SkAy5SUQ6pQ==",
+  "_location": "/ios-deploy",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ios-deploy",
+    "name": "ios-deploy",
+    "escapedName": "ios-deploy",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.9.4.tgz",
+  "_shasum": "5aa6b198feabcf53f912639fc2d9e11b4923079d",
+  "_spec": "ios-deploy",
+  "_where": "/Users/puttaguntasiri",
+  "author": {
+    "name": "Greg Hughes"
+  },
+  "bin": {
+    "ios-deploy": "./build/Release/ios-deploy"
+  },
+  "bugs": {
+    "url": "https://github.com/phonegap/ios-deploy/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "launch iOS apps iOS devices from the command line (Xcode 7)",
+  "devDependencies": {
+    "eslint": "~4.19.1",
+    "eslint-config-semistandard": "^12.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "homepage": "https://github.com/ios-control/ios-deploy#readme",
+  "keywords": [
+    "ios-deploy",
+    "deploy to iOS device"
+  ],
+  "license": "GPLv3",
+  "main": "ios-deploy",
+  "name": "ios-deploy",
+  "os": [
+    "darwin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ios-control/ios-deploy.git"
+  },
+  "scripts": {
+    "build-test": "npm run pycompile && xcodebuild -target ios-deploy-lib && xcodebuild test -scheme ios-deploy-tests",
+    "eslint": "eslint src/scripts/*.js",
+    "preinstall": "./src/scripts/check_reqs.js && xcodebuild",
+    "pycompile": "python -m py_compile src/scripts/*.py",
+    "test": "npm run eslint && npm run build-test"
+  },
+  "version": "1.9.4"
+}

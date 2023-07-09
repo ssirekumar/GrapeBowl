@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kiwee.controllers.JFrogSceneController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <HBox fx:id="JFrog_Hbox_installOptions" prefHeight="21.0" prefWidth="390.0" spacing="5.0">
+               <children>
+                  <Label text="Install Options" />
+                  <CheckBox fx:id="JFrog_chk_r" mnemonicParsing="false" text="-r">
+                     <tooltip>
+                        <Tooltip text="Reinstall an existing app, keeping its data">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="JFrog_chk_d" mnemonicParsing="false" text="-d">
+                     <tooltip>
+                        <Tooltip text="Allow version code downgrade">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </CheckBox>
+                  <CheckBox fx:id="JFrog_chk_f" mnemonicParsing="false" text="-f">
+                     <tooltip>
+                        <Tooltip text="Install package on the internal system memory">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </CheckBox>
+                  <CheckBox fx:id="JFrog_chk_l" mnemonicParsing="false" text="-l">
+                     <tooltip>
+                        <Tooltip text="Install the package with forward lock">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </CheckBox>
+                  <CheckBox fx:id="JFrog_chk_s" mnemonicParsing="false" text="-s">
+                     <tooltip>
+                        <Tooltip text="Install the application on the SD card">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </CheckBox>
+                  <CheckBox fx:id="JFrog_chk_g" mnemonicParsing="false" text="-g">
+                     <tooltip>
+                        <Tooltip text="Grant all runtime permissions">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </CheckBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets left="5.0" />
+         </VBox.margin>
+      </HBox>
+      <GridPane prefHeight="342.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="195.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="390.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="251.0" prefWidth="119.0">
+               <children>
+                  <ListView fx:id="Jfrog_DeviceListBox" prefHeight="249.0" prefWidth="108.0" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="3.0" top="2.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <VBox prefHeight="70.0" prefWidth="392.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Build search limit ">
+                                 <HBox.margin>
+                                    <Insets top="4.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="Jfrog_SearchLimitText" prefHeight="27.0" prefWidth="45.0" text="2">
+                                 <tooltip>
+                                    <Tooltip text="The maximum number of items to fetch" wrapText="true" />
+                                 </tooltip>
+                              </TextField>
+                              <Separator prefHeight="1.0" prefWidth="5.0" visible="false" />
+                              <Button fx:id="jfrog_getAllBuildsButton" mnemonicParsing="false" onAction="#getBuildsAsPerDeviceNameSelection" prefHeight="27.0" prefWidth="83.0" text="Get Builds" />
+                              <Separator prefHeight="3.0" prefWidth="49.0" visible="false" />
+                              <Button fx:id="Jfrog_ConnectToJfrogButton" mnemonicParsing="false" onAction="#connectJfrogServer" prefHeight="10.0" prefWidth="10.0" wrapText="true">
+                                 <graphic>
+                                    <ImageView fx:id="Jfrog_ConnectionIndicatorImageView1" fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" />
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Connecction Status" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="275.0" prefWidth="390.0" spacing="3.0">
+                     <children>
+                        <TreeView fx:id="Jfrog_TreeViewForBuilds" prefHeight="180.0" prefWidth="389.0" />
+                        <VBox prefHeight="145.0" prefWidth="260.0" spacing="5.0">
+                           <children>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/JfrogLogo.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets left="25.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                              <Button fx:id="btn_getDevicesInstallJFrog" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="27.0" prefWidth="99.0" text="Get Devices" />
+                              <Button fx:id="Jfrog_DownloadAndInstallApp" mnemonicParsing="false" onAction="#downloadAndInstallBuildAsPerDeviceSelection" prefHeight="27.0" prefWidth="99.0" text="Install App" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="1.0" top="3.0" />
+   </padding>
+</VBox>

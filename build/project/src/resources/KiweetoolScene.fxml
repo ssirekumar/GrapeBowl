@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kiwee.controllers.MainController">
+   <children>
+      <TabPane fx:id="mainTabPane" accessibleRole="IMAGE_VIEW" blendMode="HARD_LIGHT" layoutX="2.0" layoutY="102.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="387.0" prefWidth="490.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="installTab" text="Install Application">
+            <content>
+              <AnchorPane depthTest="ENABLE" minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="484.0">
+                     <children>
+                        <VBox prefHeight="350.0" prefWidth="484.0" spacing="5.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="51.0" prefWidth="359.0" spacing="25.0">
+                                 <children>
+                                    <Label contentDisplay="CENTER" text="Device Os Type" textAlignment="CENTER" wrapText="true">
+                                       <padding>
+                                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                       </padding>
+                                    </Label>
+                                    <ComboBox fx:id="combobox_deviceOsType" onAction="#unselectAndroidInstaltionOptions" prefHeight="27.0" prefWidth="181.0">
+                                       <tooltip>
+                                          <Tooltip text="Select your device type" />
+                                       </tooltip></ComboBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="130.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="BOTTOM_LEFT" prefHeight="55.0" prefWidth="422.0" spacing="20.0">
+                                 <children>
+                                    <RadioButton fx:id="radio_SystemPathInstall" mnemonicParsing="false" onAction="#installSelection" text="System Path">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="installRadioGroup" />
+                                       </toggleGroup>
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Install application from file system" wrapText="true" />
+                                       </tooltip>
+                                    </RadioButton>
+                                    <RadioButton fx:id="radio_JfrogInstall" mnemonicParsing="false" onAction="#installSelection" text="JFrog Artifactory" toggleGroup="$installRadioGroup">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Install application from JFrog Repository" wrapText="true" />
+                                       </tooltip></RadioButton>
+                                    <RadioButton fx:id="radio_GoogleSheetInstall" mnemonicParsing="false" onAction="#installSelection" text="URL" toggleGroup="$installRadioGroup" visible="false" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="-2.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <Pane fx:id="install_RadioSelectionPane" prefHeight="400.0" prefWidth="474.0">
+                                 <children>
+                                    <VBox fx:id="Vbox_SystemPath" prefHeight="280.0" prefWidth="477.0" spacing="5.0">
+                                       <children>
+                                          <HBox fx:id="Hbox_installOptions" prefHeight="43.0" prefWidth="410.0" spacing="5.0">
+                                             <children>
+                                                <Label text="Install Options" />
+                                                <CheckBox fx:id="chk_r" mnemonicParsing="false" text="-r">
+                                                   <tooltip>
+                                                      <Tooltip text="Reinstall an existing app, keeping its data">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="chk_d" mnemonicParsing="false" text="-d">
+                                                   <tooltip>
+                                                      <Tooltip text="Allow version code downgrade">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </CheckBox>
+                                                <CheckBox fx:id="chk_f" mnemonicParsing="false" text="-f">
+                                                   <tooltip>
+                                                      <Tooltip text="Install package on the internal system memory">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </CheckBox>
+                                                <CheckBox fx:id="chk_l" mnemonicParsing="false" text="-l">
+                                                   <tooltip>
+                                                      <Tooltip text="Install the package with forward lock">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </CheckBox>
+                                                <CheckBox fx:id="chk_s" mnemonicParsing="false" text="-s">
+                                                   <tooltip>
+                                                      <Tooltip text="Install the application on the SD card">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </CheckBox>
+                                                <CheckBox fx:id="chk_g" mnemonicParsing="false" text="-g">
+                                                   <tooltip>
+                                                      <Tooltip text="Grant all runtime permissions">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </CheckBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" prefHeight="37.0" prefWidth="463.0" spacing="5.0">
+                                             <children>
+                                                <ComboBox fx:id="combotxt_addApkPath" prefHeight="27.0" prefWidth="283.0" promptText="Add android app path">
+                                                   <tooltip>
+                                                      <Tooltip autoHide="true" contentDisplay="CENTER" text="Provide application file path from your local file system &#10;which to install into devices" wrapText="true">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </ComboBox>
+                                                <Button fx:id="button_BrowseFile" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getApplicationFile" text="Browse" textAlignment="CENTER" wrapText="true" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox prefHeight="164.0" prefWidth="359.0" spacing="5.0">
+                                             <children>
+                                                <Label contentDisplay="CENTER" prefHeight="150.0" prefWidth="119.0" text="Device List" textAlignment="CENTER" wrapText="true" />
+                                                <ListView fx:id="lst_InstallDevice_list" prefHeight="119.0" prefWidth="380.0">
+                                                   <tooltip>
+                                                      <Tooltip autoHide="true" text="Select devices to install above app">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                   <contextMenu>
+                                                      <ContextMenu>
+                                                        <items>
+                                                          <MenuItem mnemonicParsing="false" text="Install Applicaton" />
+                                                        </items>
+                                                      </ContextMenu>
+                                                   </contextMenu>
+                                                </ListView>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox fx:id="Hbox3_Install" alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="422.0" spacing="5.0">
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                             <children>
+                                                <Button fx:id="btn_getDevicesInstall" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="25.0" prefWidth="100.0" text="Get Devices" />
+                                                <Button fx:id="btn_pathInstall" mnemonicParsing="false" onAction="#installAppFromSystemPath" prefHeight="27.0" prefWidth="92.0" text="Install App" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="-19.0" />
+                                 </VBox.margin>
+                              </Pane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </opaqueInsets>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="uninstallTab" text="Uninstall Application">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0">
+                     <children>
+                        <VBox prefHeight="350.0" prefWidth="480.0" spacing="5.0">
+                           <children>
+                              <VBox prefHeight="77.0" prefWidth="450.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="442.0" spacing="20.0">
+                                       <children>
+                                          <Label contentDisplay="CENTER" text="Device Os Type" textAlignment="CENTER" wrapText="true">
+                                             <padding>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                             </padding>
+                                          </Label>
+                                          <ComboBox fx:id="combobox_UninstalldeviceOsType" onAction="#unselectAndroidUnInstaltionOptions" prefHeight="25.0" prefWidth="145.0">
+                                             <tooltip>
+                                                <Tooltip text="Select your device type" />
+                                             </tooltip>
+                                          </ComboBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="Hbox_UninstallOptions" alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="442.0" spacing="17.0">
+                                       <children>
+                                          <Label text="Uninstall Options" />
+                                          <CheckBox fx:id="chk_k" mnemonicParsing="false" text="-k">
+                                             <tooltip>
+                                                <Tooltip text="Keep the data and cache directories around after package removal">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                          </CheckBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="442.0" spacing="10.0">
+                                 <children>
+                                    <RadioButton fx:id="radio_UninstallSelectionCombo" mnemonicParsing="false" onAction="#unInstallSelection">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="unInstallSelectioGroup" />
+                                       </toggleGroup></RadioButton>
+                                    <ComboBox fx:id="combotxt_appUninstall" prefHeight="25.0" prefWidth="338.0" promptText="Enter or Select package name">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" contentDisplay="CENTER" text="To filter the installed app package name &#10;from connected devices.&#10;" textOverrun="CLIP" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip></ComboBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="183.0" prefWidth="442.0" spacing="10.0">
+                                 <children>
+                                    <RadioButton fx:id="radio_UninstallSelectionList" mnemonicParsing="false" onAction="#unInstallSelection" toggleGroup="$unInstallSelectioGroup" />
+                                    <ListView fx:id="lst_package_names" prefHeight="173.0" prefWidth="231.0">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Get all the installed package names&#10;according to the filter string." wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Tooltip>
+                                       </tooltip>
+                                    </ListView>
+                                    <ListView fx:id="lst_UnInstallDevice_list" prefHeight="173.0" prefWidth="220.0">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Select the devices in which app to be uninstall&#10;as per the package name." wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Tooltip>
+                                       </tooltip>
+                                    </ListView>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="422.0" spacing="7.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <children>
+                                    <Button fx:id="btn_getAppPackagesDevices" defaultButton="true" mnemonicParsing="false" onAction="#getAppPackageDevices" text="Get App Package Devices" />
+                                    <Button fx:id="btn_pathInstall2" mnemonicParsing="false" onAction="#unInstallAppFromSelction" prefHeight="25.0" prefWidth="110.0" text="Uninstall App's" />
+                                    <Button fx:id="btn_UninstallClearDeviceList" mnemonicParsing="false" onAction="#clearDeviceList" text="Clear Device List" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="clearlogTab" text="Clear Logcat">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0">
+                     <children>
+                        <VBox prefHeight="350.0" prefWidth="480.0" spacing="5.0">
+                           <children>
+                              <HBox prefHeight="12.0" prefWidth="422.0" />
+                              <HBox prefHeight="145.0" prefWidth="320.0" spacing="5.0">
+                                 <children>
+                                    <Label contentDisplay="CENTER" prefHeight="150.0" prefWidth="119.0" text="Select Android Devices" textAlignment="CENTER" wrapText="true" />
+                                    <ListView fx:id="lst_ClearLogCatDevice_list" prefHeight="135.0" prefWidth="322.0">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Select devices to clear logcat" />
+                                       </tooltip>
+                                    </ListView>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="422.0" spacing="5.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <children>
+                                    <Button fx:id="btn_getDevicesClearLogcat" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="25.0" prefWidth="100.0" text="Get Devices" />
+                                    <Button fx:id="btn_ClearLogcatDevices" mnemonicParsing="false" onAction="#clearLogCatDataOfdevices" prefHeight="25.0" prefWidth="100.0" text="Clear logcat" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="clearAppDataTab" text="Clear App Data &amp; Cache">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0">
+                     <children>
+                        <VBox prefHeight="350.0" prefWidth="480.0" spacing="5.0">
+                           <children>
+                              <HBox alignment="BOTTOM_RIGHT" prefHeight="17.0" prefWidth="442.0" spacing="20.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="442.0" spacing="10.0">
+                                 <children>
+                                    <RadioButton fx:id="radio_clearAppSelectionCombo" mnemonicParsing="false" onAction="#clearAppSelection">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="clearAppSelectioGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <ComboBox fx:id="combo_clearAppDataSelection" editable="true" prefHeight="25.0" prefWidth="338.0" promptText="Enter or Select package name">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" contentDisplay="CENTER" text="To filter the installed app package name &#10;from connected devices.&#10;" textOverrun="CLIP" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </ComboBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="183.0" prefWidth="442.0" spacing="10.0">
+                                 <children>
+                                    <RadioButton fx:id="radio_clearAppSelectionList" mnemonicParsing="false" onAction="#clearAppSelection" toggleGroup="$clearAppSelectioGroup" />
+                                    <ListView fx:id="lst_pckNamesClear" prefHeight="173.0" prefWidth="231.0">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Get all the installed package names&#10;according to the filter string." wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </ListView>
+                                    <ListView fx:id="lst_ClearAppDataDevice_list" prefHeight="173.0" prefWidth="220.0">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Select the devices in which app data to be &#10;clear as per the package name." wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </ListView>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="422.0" spacing="7.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <children>
+                                    <Button fx:id="btn_AppDataClear" defaultButton="true" mnemonicParsing="false" onAction="#getAppPackageDevices" text="Get App Package Devices">
+                                       <tooltip>
+                                          <Tooltip text="1" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="btn_getDevicesClearAppData" mnemonicParsing="false" onAction="#clearAppData" prefHeight="25.0" prefWidth="115.0" text="Clear App Data">
+                                       <tooltip>
+                                          <Tooltip text="2" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="btn_AppDataClearDeviceList" mnemonicParsing="false" onAction="#clearDeviceList" prefHeight="25.0" prefWidth="125.0" text="Clear Device List">
+                                       <tooltip>
+                                          <Tooltip text="3" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="deviceInfoTab" text="Device Info">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0">
+                     <children>
+                        <VBox prefHeight="350.0" prefWidth="480.0" spacing="5.0">
+                           <children>
+                              <HBox alignment="BOTTOM_RIGHT" prefHeight="55.0" prefWidth="422.0" spacing="15.0">
+                                 <children>
+                                    <RadioButton fx:id="deviceinfo_all" mnemonicParsing="false" onAction="#deviceInfoSelector" text="All">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="deviceInfoRadioGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="deviceinfo_attri" mnemonicParsing="false" onAction="#deviceInfoSelector" text="Attribute" toggleGroup="$deviceInfoRadioGroup" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox prefHeight="339.0" prefWidth="430.0" spacing="3.0">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefHeight="56.0" prefWidth="416.0" spacing="5.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <ComboBox fx:id="com_deviceinfo" prefHeight="27.0" prefWidth="319.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="270.0" prefWidth="410.0" spacing="3.0">
+                                       <children>
+                                          <ListView fx:id="lst_DeviceInfoDevice_list" prefHeight="162.0" prefWidth="121.0">
+                                             <tooltip>
+                                                <Tooltip autoHide="true" text="Select the devices in which app to be uninstall&#10;as per the package name." wrapText="true">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                             <HBox.margin>
+                                                <Insets left="2.0" right="2.0" />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </ListView>
+                                          <TableView fx:id="tbl_DeviceInfo" editable="true" fixedCellSize="-3.0" prefHeight="196.0" prefWidth="321.0">
+                                            <columns>
+                                              <TableColumn fx:id="tblColu_DeviceInfoAttribute" editable="true" prefWidth="136.0" text="Attribute" />
+                                              <TableColumn fx:id="tblColu_DeviceInfoValue" editable="true" prefWidth="164.0" text="Value" />
+                                            </columns>
+                                             <effect>
+                                                <DropShadow color="#000000de" height="8.98" radius="5.2975" width="14.21" />
+                                             </effect>
+                                          </TableView>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="422.0" spacing="5.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <Button fx:id="btn_getDevicesDeviceInfo" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="25.0" prefWidth="100.0" text="Get Devices" />
+                                          <Button fx:id="btn_deviceInfo" mnemonicParsing="false" onAction="#deviceInfoEvent" prefHeight="25.0" prefWidth="115.0" text="Get Device Info" />
+                                          <Button fx:id="btn_deviceInfoSave" mnemonicParsing="false" onAction="#deviceInfoEvent" text="Save to CSV" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="bugReportTab" text="Bug Report">
+               <content>
+                  <AnchorPane fx:id="anchorPane_BugReportSaver" minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0" />
+               </content>
+            </Tab>
+            <Tab fx:id="commandExecutorTab" text="Execute Commands">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0">
+                     <children>
+                        <VBox prefHeight="344.0" prefWidth="480.0" spacing="5.0">
+                           <children>
+                              <HBox prefHeight="28.0" prefWidth="407.0" spacing="15.0">
+                                 <children>
+                                    <RadioButton fx:id="radio_PreDefinedCommands" mnemonicParsing="false" onAction="#executeCommandSelection" text="Pre defined">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="executeCommandGroup" />
+                                       </toggleGroup></RadioButton>
+                                    <RadioButton fx:id="radio_CustomCommandExecute" mnemonicParsing="false" onAction="#executeCommandSelection" text="Custom" toggleGroup="$executeCommandGroup" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="200.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <Pane fx:id="commandExe_RadioSelectionPane" prefHeight="290.0" prefWidth="448.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="imageComparisionTab" text="Device Image Comparision">
+               <content>
+                  <AnchorPane fx:id="anchorPane_ImageComparision" minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0" />
+               </content>
+            </Tab>
+        </tabs>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets>
+      </TabPane>
+      <VBox layoutX="-1.0" prefHeight="96.0" prefWidth="490.0" spacing="1.0">
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+         <children>
+            <MenuBar prefHeight="25.0" prefWidth="470.0">
+              <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="propertiesValueSaver" mnemonicParsing="false" onAction="#callPropertySaverDialog" text="Preferences" />
+                        <MenuItem fx:id="menuItem_PropertyCloseKiwee" mnemonicParsing="false" onAction="#closeToolFromMenu" text="Close Kiwee" />
+                    </items>
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Device">
+                    <items>
+                      <MenuItem fx:id="menuitem_getallAndroidDevices" mnemonicParsing="false" onAction="#getAllConnectedAndroidDevicesIntoAllTabs" text="Get all connected android's" />
+                        <MenuItem mnemonicParsing="false" onAction="#getAllConnectediOSDevicesIntoAllTabs" text="Get all connected iOS" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Help">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="about_communicate" mnemonicParsing="false" onAction="#communicateAlertScene" text="Contact" />
+                        <MenuItem fx:id="about_versionKiwee" mnemonicParsing="false" onAction="#toolVersionAlertScene" text="About Kiwee" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="25.0" prefWidth="470.0">
+              <items>
+                <Button fx:id="toolbarbtn_installApp" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="104.0" layoutY="81.0" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Install &#10;App" textAlignment="CENTER" textOverrun="CLIP" wrapText="true"> 
+                  <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                  <image>
+                    <Image url="@images/wsa-install.png" />
+                  </image>
+                  </ImageView>
+                  </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Install App" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                </Button>
+                  <Button fx:id="toolbarbtn_uninstallApp" contentDisplay="TOP" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Uninstall &#10;App" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/UnInstallImage_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="UnInstall App" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="toolbarbtn_clearlogcat" contentDisplay="TOP" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Clear &#10;logcat" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/UnInstallImage_6.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Clear logcat" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="toolbarbtn_clearcache" contentDisplay="TOP" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Clear&#10;App data" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/clearCache_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Clear cache &amp; data" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="toolbarbtn_deviceinfo" contentDisplay="TOP" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Device&#10;Info" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/DeviceInfo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Device Info" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="toolbarbtn_bugreport" contentDisplay="TOP" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Bug &#10;Report" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/BugReport_final.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Bug Report" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="toolbarbtn_executeCommands" contentDisplay="TOP" layoutX="288.0" layoutY="10.0" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Execute&#10;Commands" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/execute-command.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="ExecuteCommands" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="toolbarbtn_ImageComparision" contentDisplay="TOP" layoutX="336.0" layoutY="10.0" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="Image &#10;Comparison" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/compare-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Image Comparison" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="toolbarbtn_appinfo" contentDisplay="TOP" mnemonicParsing="false" onAction="#tabSelectionFromToolBar" text="App &#10;Info" textAlignment="CENTER" visible="false">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@images/DeviceInfo_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip autoHide="true" text="App Info" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+      <VBox layoutX="-1.0" layoutY="517.0" prefHeight="177.0" prefWidth="490.0">
+         <children>
+            <HBox alignment="BASELINE_LEFT" prefHeight="31.0" prefWidth="433.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="111.0" text="Action Log" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ProgressIndicator fx:id="actionLogProgressBar" progress="0.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="204.0" prefWidth="462.0" spacing="3.0">
+               <children>
+                  <TextArea fx:id="txt_statusArea" prefHeight="151.0" prefWidth="468.0" wrapText="true">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button fx:id="btn_selectLogAll" mnemonicParsing="false" onAction="#selectAllLog" prefHeight="25.0" prefWidth="80.0" text="Copy log" />
+                  <Button fx:id="btn_LogClear" mnemonicParsing="false" onAction="#clearLogActivity" prefHeight="25.0" prefWidth="80.0" text="Clear log" />
+               </children>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="8.0" prefWidth="450.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="-25.0" left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+   </padding>
+</Pane>

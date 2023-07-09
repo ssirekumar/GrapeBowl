@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="KiweeTool.jnlp">
+  <information>
+    <title>Kiwee 1.0</title>
+    <vendor>Siri Kumar Puttagunta</vendor>
+    <description>Kiwee for Mobile QA and Dev</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="KiweeTool.jar" size="2306284" download="eager" />
+    <jar href="libs/commons-exec-1.3.jar" size="54423" download="eager" />
+    <jar href="libs/commons-io-2.6.jar" size="214788" download="eager" />
+    <jar href="libs/jfxrt.jar" size="18195553" download="eager" />
+    <jar href="libs/json-simple-1.1.1.jar" size="23931" download="eager" />
+    <jar href="libs/opencsv-2.3.jar" size="14146" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="com.kiwee.application.Kiwee"  name="Kiwee" />
+  <update check="background"/>
+</jnlp>

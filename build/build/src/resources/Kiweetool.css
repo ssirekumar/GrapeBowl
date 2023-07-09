@@ -1,0 +1,11 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+
+.field-error-border{
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, white;
+	-fx-background-radius: 1px, 1px, 1px, 1px;
+	-fx-border-color: FF3333;
+	-fx-faint-focus-color: #d3524422;
+	-fx-border-width: 1 1 1 1
+}

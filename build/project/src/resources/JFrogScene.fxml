@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<javafx.scene.layout.VBox fx:id="jfrog_groupController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kiwee.controllers.JFrogSceneController">
+   <children>
+      <VBox prefHeight="295.0" prefWidth="490.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <GridPane alignment="BASELINE_LEFT" hgap="1.0" prefHeight="135.0" prefWidth="446.0" vgap="1.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="171.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="171.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="126.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Repository Root Path:" />
+                  <ComboBox fx:id="combo_JfrogRootpath" prefHeight="27.0" prefWidth="162.0" GridPane.columnIndex="1" />
+                  <Label text="Instalation Client Type:" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="combo_JfrogClientType" prefHeight="27.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Client file path:" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="combo_JfrogClientFilePath" prefHeight="27.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ImageView fitHeight="100.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="30.0" top="-48.0" />
+                     </GridPane.margin>
+                     <image>
+                        <Image url="@images/JfrogLogo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="-15.0" left="97.0" top="-23.0" />
+                     </GridPane.margin>
+                     <image>
+                        <Image url="@images/connectionicon4.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn_ConnectToJFrog" mnemonicParsing="false" text="Connect" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="20.0" top="-10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox prefHeight="110.0" prefWidth="359.0" spacing="2.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="119.0" prefWidth="146.0" text="Device List" textAlignment="CENTER" wrapText="true" />
+                  <ListView fx:id="lst_InstallDeviceJFrog" prefHeight="95.0" prefWidth="290.0">
+                     <tooltip>
+                        <Tooltip autoHide="true" text="Select devices to install above app">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ListView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="-20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="Hbox_JfrogInstall" alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="422.0" spacing="5.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btn_getDevicesInstallJFrog" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="25.0" prefWidth="100.0" text="Get Devices" />
+                  <Button fx:id="btn_PathFileInstall" mnemonicParsing="false" onAction="#installAppFromSystemPath" prefHeight="25.0" prefWidth="150.0" text="Download &amp; Install" />
+                  <Button fx:id="btn_PathFileDownload" mnemonicParsing="false" text="Download" /> 
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</javafx.scene.layout.VBox>

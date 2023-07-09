@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kiwee.controllers.PropertiesSaverController">
+   <children>
+      <VBox prefHeight="431.0" prefWidth="662.0" spacing="1.0">
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+         <children>
+            <HBox>
+               <children>
+                  <TableView fx:id="table_PropertykeyValue" editable="true" prefHeight="425.0" prefWidth="560.0">
+                    <columns>
+                      <TableColumn fx:id="table_PropertySaverKeyColumn" editable="false" prefWidth="240.0" text="Property Name" />
+                      <TableColumn fx:id="table_PropertySaverValueColumn" editable="true" maxWidth="333.5" prefWidth="317.5" sortable="false" text="Property Value" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox prefHeight="392.0" prefWidth="97.0" spacing="6.0">
+                     <children>
+                        <Button fx:id="btn_PreferencesApplied" mnemonicParsing="false" onAction="#applyPropertySaverIntoFile" prefHeight="27.0" prefWidth="96.0" text="Apply" />
+                        <Button fx:id="button_PropertySaverSave" defaultButton="true" layoutX="15.0" layoutY="47.0" mnemonicParsing="false" onAction="#savePropertySaverIntoFile" prefHeight="27.0" prefWidth="96.0" text="Save" />
+                        <Label fx:id="lbl_PreferencesSavedMessage" prefHeight="250.0" prefWidth="85.0" wrapText="true" />
+                        <Separator orientation="VERTICAL" prefHeight="256.0" prefWidth="10.0" visible="false" />
+                        <Button fx:id="button_PropertySaverCancel" cancelButton="true" layoutX="15.0" layoutY="89.0" mnemonicParsing="false" onAction="#cancelPropertyPathWindow" prefHeight="27.0" prefWidth="96.0" text="Cancel" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

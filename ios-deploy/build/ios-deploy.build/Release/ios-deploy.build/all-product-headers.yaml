@@ -1,0 +1,17 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/usr/local/lib/node_modules/ios-deploy/build/Release",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "libios_deploy.h",
+          'external-contents': "/usr/local/lib/node_modules/ios-deploy/src/ios-deploy-lib/libios_deploy.h"
+        }
+      ]
+    }
+  ]
+}

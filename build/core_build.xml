@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GrapeBowlCore" default="coreGrapeBowl" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<property name="project.name" value="Grape Bowl">
+	<property name="source.dir" value="src">
+	<property name="build.dir" value="coreBuild">
+	<property name="class.dir" value="${build.dir}/classes">
+	
+	
+	<target name="prepare" description="" depends="">
+	 <mkdir dir="${class.dir}" />
+	</target>
+	
+	<target name="compile" description="" depends="prepare">
+	 <javac srcdir="">
+	</target>
+
+
+</project>
