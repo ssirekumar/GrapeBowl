@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="358.0" prefWidth="460.0" spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0" spacing="25.0">
+         <children>
+            <Label contentDisplay="CENTER" text="Device Os Type" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <ComboBox fx:id="combobox_deviceOsType" onAction="#unselectAndroidInstaltionOptions" prefHeight="27.0" prefWidth="181.0">
+               <tooltip>
+                  <Tooltip text="Select your device type" />
+               </tooltip>
+            </ComboBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="130.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="BOTTOM_LEFT" prefHeight="55.0" prefWidth="422.0" spacing="20.0">
+         <children>
+            <RadioButton fx:id="radio_SystemPathInstall" mnemonicParsing="false" onAction="#installSelection" text="System Path">
+               <toggleGroup>
+                  <ToggleGroup fx:id="installRadioGroup" />
+               </toggleGroup>
+               <tooltip>
+                  <Tooltip autoHide="true" text="Install application from file system" wrapText="true" />
+               </tooltip>
+            </RadioButton>
+            <RadioButton fx:id="radio_JfrogInstall" mnemonicParsing="false" onAction="#installSelection" text="JFrog" toggleGroup="$installRadioGroup">
+               <tooltip>
+                  <Tooltip autoHide="true" text="Install application from JFrog Repository" wrapText="true" />
+               </tooltip>
+            </RadioButton>
+            <RadioButton fx:id="radio_GoogleSheetInstall" mnemonicParsing="false" onAction="#installSelection" text="Google Sheets" toggleGroup="$installRadioGroup" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="-2.0" />
+         </VBox.margin>
+      </HBox>
+      <Pane fx:id="install_RadioSelectionPane" prefHeight="295.0" prefWidth="490.0">
+         <children>
+            <VBox fx:id="Vbox_SystemPath" prefHeight="267.0" prefWidth="452.0" spacing="5.0">
+               <children>
+                  <HBox fx:id="Hbox_installOptions" prefHeight="43.0" prefWidth="410.0" spacing="5.0">
+                     <children>
+                        <Label text="Install Options" />
+                        <CheckBox fx:id="chk_r" mnemonicParsing="false" text="-r">
+                           <tooltip>
+                              <Tooltip text="Reinstall an existing app, keeping its data">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_d" mnemonicParsing="false" text="-d">
+                           <tooltip>
+                              <Tooltip text="Allow version code downgrade">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_f" mnemonicParsing="false" text="-f">
+                           <tooltip>
+                              <Tooltip text="Install package on the internal system memory">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_l" mnemonicParsing="false" text="-l">
+                           <tooltip>
+                              <Tooltip text="Install the package with forward lock">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_s" mnemonicParsing="false" text="-s">
+                           <tooltip>
+                              <Tooltip text="Install the application on the SD card">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_g" mnemonicParsing="false" text="-g">
+                           <tooltip>
+                              <Tooltip text="Grant all runtime permissions">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="370.0" spacing="5.0">
+                     <children>
+                        <ComboBox fx:id="combotxt_addApkPath" prefHeight="25.0" prefWidth="269.0" promptText="Add android app path">
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Provide application file path from your local file system &#10;which to install into devices" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </ComboBox>
+                        <Button fx:id="button_BrowseFile" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getApplicationFile" text="Browse" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="158.0" prefWidth="432.0" spacing="5.0">
+                     <children>
+                        <Label contentDisplay="CENTER" prefHeight="150.0" prefWidth="119.0" textAlignment="CENTER" wrapText="true" />
+                        <TitledPane animated="false" collapsible="false" prefHeight="121.0" prefWidth="376.0" text="Device Names">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="337.0">
+                                 <children>
+                                    <ListView fx:id="lst_InstallDevice_list" prefHeight="96.0" prefWidth="337.0">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Select devices to install above app">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                       <contextMenu>
+                                          <ContextMenu>
+                                             <items>
+                                                <MenuItem mnemonicParsing="false" text="Install Applicaton" />
+                                             </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </ListView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="Hbox3_Install" alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="432.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="btn_getDevicesInstall" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="25.0" prefWidth="100.0" text="Get Devices" />
+                        <Button fx:id="btn_pathInstall" mnemonicParsing="false" onAction="#installAppFromSystemPath" prefHeight="25.0" prefWidth="61.0" text="Install" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="-19.0" />
+         </VBox.margin>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

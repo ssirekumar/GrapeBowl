@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox_BugReportSaver" prefHeight="259.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kiwee.controllers.BugReportSaverController">
+   <padding>
+      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+   </padding>
+   <children>
+      <HBox prefHeight="28.0" prefWidth="310.0" spacing="10.0">
+         <children>
+            <Label text="Capture a bug report from a device" />
+            <Button maxHeight="10.0" maxWidth="10.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" textAlignment="CENTER" wrapText="true">
+               <HBox.margin>
+                  <Insets left="50.0" top="10.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/help-icon-transparent.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="To get a bug report directly from your device, do the following:&#10;&#10;1. Be sure you have Developer Options enabled.&#10;2. In Developer options, tap Take bug report.&#10;3. Select the type of bug report you want and tap Report.&#10;4. To share the bug report, tap the notification." />
+               </tooltip>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="140.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="233.0" prefWidth="450.0" spacing="10.0">
+         <children>
+            <ListView fx:id="lst_BugReportDeviceList" prefHeight="223.0" prefWidth="125.0">
+               <tooltip>
+                  <Tooltip autoHide="true" text="Select the devices in which you want to take the BugReport." wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </ListView>
+            <VBox prefHeight="262.0" prefWidth="343.0" spacing="10.0">
+               <children>
+                  <HBox prefHeight="37.0" prefWidth="214.0" spacing="25.0">
+                     <children>
+                        <Label contentDisplay="CENTER" prefHeight="27.0" prefWidth="120.0" text="Device Os Type" textAlignment="CENTER" wrapText="true">
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="combo_BugReportDeviceOsType" onAction="#showBugReportControlsAsPerSelection" prefHeight="27.0" prefWidth="184.0">
+                           <tooltip>
+                              <Tooltip text="Select your device type" />
+                           </tooltip>
+                        </ComboBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txt_BugReportFileName" prefHeight="27.0" prefWidth="312.0" promptText="Name of the Bug Report" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="39.0" prefWidth="309.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="txt_BugReportDirectoryPath" prefHeight="27.0" prefWidth="202.0" promptText="Path of directory to store" />
+                        <Button fx:id="btn_BugReportSelectPath" mnemonicParsing="false" onAction="#setPathToSaveBugreportFile" prefHeight="27.0" prefWidth="99.0" text="Select Path" />
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="109.0" prefWidth="309.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btn_getBugReportDevicesList" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="25.0" prefWidth="100.0" text="Get Devices" />
+                        <Button fx:id="btn_BugReportSave" mnemonicParsing="false" onAction="#saveBugreportFile" text="Generate Bug Report(s)" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="79.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

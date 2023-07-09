@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="443.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="359.0" prefWidth="442.0" spacing="5.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="55.0" prefWidth="422.0" spacing="20.0">
+               <children>
+                  <RadioButton fx:id="radio_SystemPathInstall_s" mnemonicParsing="false" onAction="#installSelection" text="System Path">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="installRadioGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radio_GoogleSheetInstall_s" mnemonicParsing="false" onAction="#installSelection" text="From Google Sheets" toggleGroup="$installRadioGroup" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <VBox fx:id="Vbox_GoogleSheets" prefHeight="298.0" prefWidth="430.0" spacing="5.0">
+               <children>
+                  <HBox prefHeight="43.0" prefWidth="410.0" spacing="5.0">
+                     <children>
+                        <Label text="Install Options" />
+                        <CheckBox fx:id="chk_r1" mnemonicParsing="false" text="-r">
+                           <tooltip>
+                              <Tooltip text="Reinstall an existing app, keeping its data">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_d1" mnemonicParsing="false" text="-d">
+                           <tooltip>
+                              <Tooltip text="Allow version code downgrade">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_f1" mnemonicParsing="false" text="-f">
+                           <tooltip>
+                              <Tooltip text="Install package on the internal system memory">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_l1" mnemonicParsing="false" text="-l">
+                           <tooltip>
+                              <Tooltip text="Install the package with forward lock">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_s1" mnemonicParsing="false" text="-s">
+                           <tooltip>
+                              <Tooltip text="Install the application on the SD card">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <CheckBox fx:id="chk_g1" mnemonicParsing="false" text="-g">
+                           <tooltip>
+                              <Tooltip text="Grant all runtime permissions">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="416.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="56.0" text="Sheet id" />
+                        <TextField prefHeight="25.0" prefWidth="176.0" />
+                        <ComboBox fx:id="combotxt_addApkPath1" prefHeight="25.0" prefWidth="141.0" promptText="Function name">
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Provide the function Name" textOverrun="CLIP" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </ComboBox>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Get" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="249.0" prefWidth="410.0" spacing="3.0">
+                     <children>
+                        <TableView fx:id="tbl_URLPathInstalation" editable="true" prefHeight="151.0" prefWidth="339.0">
+                           <columns>
+                              <TableColumn prefWidth="97.0" text="Environment" />
+                              <TableColumn prefWidth="173.0" text="URI" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <ListView fx:id="lst_InstallDevice_Sheetlist" prefHeight="105.0" prefWidth="193.0">
+                           <tooltip>
+                              <Tooltip autoHide="true" text="Select devices to install above app">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </ListView>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="Hbox3_Install1" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="410.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="btn_getDevicesSheetsInstall" defaultButton="true" mnemonicParsing="false" onAction="#getdeviceNamesIntoListBox" prefHeight="25.0" prefWidth="89.0" text="Get Devices" />
+                        <Button fx:id="btn_pathInstall" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Install" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
